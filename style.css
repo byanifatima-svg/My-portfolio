@@ -12,7 +12,7 @@ body{
 header{
     padding:5%;
     text-align: center;
-    background-color: #c8e3fd;
+    background: linear-gradient(135deg, #f8e8df 0%,#f0e7f3 45%,#dce7f7 100%);
 }
 img {
     width: 170px;
@@ -20,23 +20,35 @@ img {
     border-radius: 50%;
     text-align: center;
     border-style: double;  
+    animation: move 3s 1 ;
+}
+@keyframes move{
+    0%{opacity: 0;}
+    100%{opacity: 100;}
 }
 .button{
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px;
     margin-top: 15px;
     background-color: rgb(240, 244, 243);
     color: rgb(9, 9, 9);
-    border: 2px solid #95b8d8;
+    border: 2px solid #cdd7e9;
     border-radius: 16px;  
     text-align: center;
     width: 105px;  
     height: 20px;  
-    font-weight: 600;
+    font-weight: 400;
     transition: 0.15 ease; 
     cursor: pointer;  
+    animation:bounce 2s 2 ;
                                             
 }
+@keyframes bounce{
+  0%  {transform: translateY(0);}
+  50%{transform: translateY(-10px);}
+  100%{transform: translateY(0);}
+}
+
 
 .button:hover{
     transform: scale(1.1);
@@ -45,11 +57,66 @@ img {
 
 h2 {
     padding: 0;
-    padding-top: 0;
-    font-size: 19px;
+    font-size: 12px;
     
 }
+h2 span{
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+    animation: typing-h2 3s steps(49) forwards 1;
+    animation-delay: 1s;
+}
 
+@keyframes typing-h2{
+    0%{width: 0;}
+    100%{width: 100%;}
+}
+h1{
+    text-align: center;
+}
+h1 span{ 
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+    animation: typing 1s steps(14) forwards 1;
+    
+}
+@keyframes typing {
+    0%{width: 0;}
+    100%{width: 14ch;}
+}
+h3{
+    font-size: 22px;
+}
+
+.social-icons{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    margin: 0;
+    justify-content: center;
+    
+}
+.social-icons a {
+    font-size: 25px;
+    text-decoration: none;
+    color: #334155;
+}
+.social-icons a:hover{
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+.social-icons a :active{
+    color: #97b9bc;
+}
+.social-icons i {
+    font-size: 20px;
+}
 p{ 
     font-family: Arial;
     line-height: 1.6;
@@ -95,7 +162,7 @@ a{
 
 
 main{
-    background-color: #DCEAF7;
+    background-color: #e6eef7;
     
 }
 .card{
@@ -107,12 +174,7 @@ main{
     text-align: center;
     border-radius: 24px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-    transition: 0.3s;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    
-    
-    
+    transition: transform 0.4s ease 0.1s ;
 }
 
 .card:hover {
@@ -153,6 +215,12 @@ ul{
     width: 100%;
     box-sizing: border-box;
 }
+h1,h2{
+    text-align: center;
+}
+h2{
+    font-size: 10px;
+}
 nav a{
     margin: 0;
 }
@@ -163,11 +231,8 @@ li{
 .card{
     width: 100%;
     align-items: center;
-
-
 }
 
-h1{font-size: 20px;}
 
 }
 /* @media (min-width: 601px) and (max-width: 1024px){
